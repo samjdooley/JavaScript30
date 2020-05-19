@@ -7,9 +7,7 @@
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
-    // ## Array Cardio Day 2
-
-    const people = [
+   const people = [
       { name: 'Wes', year: 1988 },
       { name: 'Kait', year: 1986 },
       { name: 'Irv', year: 1970 },
@@ -26,16 +24,28 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+      const overNineteen = people.some(element => ((new Date()).getFullYear()) - element.year >= 19)
+    
+      console.log(overNineteen)
+      
     // Array.prototype.every() // is everyone 19 or older?
+
+    const allOver = people.every(element => (new Date().getFullYear()) - element.year >= 19);
+    console.log(allOver);
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
+    const commentID = comments.find(({id}) => id ===  823423);
+    console.log(commentID);
+
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
-
+    const findComment = comments.findIndex(({id}) => id === 823423)
+    comments.splice(findComment, 1)
+    console.table(comments)
   </script>
 </body>
 </html>
